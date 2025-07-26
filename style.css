@@ -1,9 +1,10 @@
 body {
   margin: 0;
- font-family: 'Fredoka', Arial, Helvetica, sans-serif;
+  font-family: 'Fredoka', Arial, sans-serif;
   background: white;
   color: #333;
 }
+
 
 header {
   position: fixed;
