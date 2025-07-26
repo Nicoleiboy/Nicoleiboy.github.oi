@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: white;
+  color: #333;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #66ccff, #ffdd55);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.pantalla {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.pantalla.visible {
+  display: block;
+}
+
+.tarjeta {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tarjeta:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+
+.redes {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.redes img {
+  width: 40px;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.redes img:hover {
+  filter: grayscale(0%);
+}
+
+.galeria {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.galeria img {
+  height: 150px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #eee;
+  margin-top: 40px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* 🎨 NUEVO ESTILO CUTE para tarjetas/secciones */
+.tarjeta, .seccion {
+  background: #fff;
+  border-radius: 20px;
+  border: 2px solid #4DD0E1;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.tarjeta:hover {
+  transform: scale(1.01);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta h2,
+.seccion h2 {
+  color: #0288D1;
+}
+
+/* 🌈 Estilo cute para <details> desplegables */
+.desplegable details {
+  border: 2px solid #4DD0E1;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.desplegable summary {
+  background-color: #4DD0E1;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.desplegable details[open] summary {
+  border-bottom: 1px solid #ccc;
+}
+
+.desplegable details p {
+  padding: 15px;
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+}

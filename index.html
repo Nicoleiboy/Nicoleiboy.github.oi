@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ruge y Aprende</title>
+  <link rel="stylesheet" href="style.css" />
+   <style>
+    /* Estilos de la pantalla de bienvenida */
+    .pantalla-inicio {
+      height: 100vh;
+      background: linear-gradient(135deg, #FFCC00, #4DD0E1);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 9999;
+    }
+
+    .pantalla-inicio h1 {
+      font-size: 4em;
+      margin-bottom: 30px;
+    }
+
+    .boton {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #00BCD4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .boton:hover {
+      background-color: #0097A7;
+    }
+
+    .corazon {
+      position: absolute;
+      animation: caida linear infinite;
+      color: #FF7043;
+      font-size: 1.2em;
+      pointer-events: none;
+    }
+
+    @keyframes caida {
+      0% { transform: translateY(-100%); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla de bienvenida -->
+  <div class="pantalla-inicio" id="pantallaBienvenida">
+    <h1>¡Bienvenidos a Ruge y Aprende! 🦁🐘</h1>
+    <button class="boton" onclick="entrarSitio()">Entrar</button>
+  </div>
+</head>
+<body>
+  <header>
+    <h1>Ruge y Aprende 🦁</h1>
+    <nav>
+      <a href="#" onclick="mostrarPantalla('inicio')">Inicio</a>
+      <a href="#" onclick="mostrarPantalla('opiniones')">Opiniones</a>
+      <a href="#" onclick="mostrarPantalla('sindromex')">Síndrome X</a>
+      <a href="#" onclick="mostrarPantalla('soporte')">Soporte</a>
+    </nav>
+  </header>
+
+  <main>
+    
+
+    <!-- Sección de Entrada estilo portada -->
+    <section class="pantalla visible" id="inicio">
+      <div class="seccion tarjeta">
+        <h2>¿Qué es Ruge y Aprende?</h2>
+        <p>Es un juego interactivo infantil lleno de diversión y aprendizaje. Los niños conocen más sobre los animales, sus hábitats y cuidados, todo mientras juegan en un mundo mágico lleno de color.</p>
+      </div>
+
+      <div class="seccion tarjeta">
+        <h2>🦁 Personajes del Juego</h2>
+        <p>Conoce a Leo el León, Trompita el elefante y Manchitas la jirafa. Cada personaje te guiará en diferentes misiones educativas y aventuras.</p>
+      </div>
+
+      <div class="seccion tarjeta">
+        <h2>🎮 Mini Juegos Favoritos</h2>
+        <p>Mini juego memoria animal. ¡Desbloquea niveles por cada misión completada!</p>
+      </div>
+
+      <div class="seccion tarjeta">
+        <h2>📘 Aprende Jugando</h2>
+        <p>Con cada actividad los niños desarrollan habilidades cognitivas, conocimiento ecológico animal y valores de respeto a los animales y la naturaleza.</p>
+      </div>
+
+      <div class="seccion tarjeta carrusel">
+        <h2>📸 Galería de Aventuras</h2>
+        <div class="galeria">
+          <img src="b07ced9f-d72a-4e20-b256-26fc80937a23.jpg" alt="Imagen 1" />
+          <img src="9422187e-a4ac-4443-b5c7-5cdf158f8f30.jpg" alt="Imagen 2" />
+          <img src="2662933e-4729-4061-af14-7e032b249129.jpg" alt="Imagen 3" />
+          <img src="3595f66d-ce9e-498f-9016-915595a4b5ce.jpg" alt="Imagen 1" />
+          <img src="238bd7b6-0066-48c5-a908-751158b2f72a.jpg" alt="Imagen 2" />
+          <img src="57e8bdfb-7e17-48a7-a294-8bccb695cc3a.jpg" alt="Imagen 3" />
+           <img src="43e1c5f5-3779-4c7c-a1d4-8e759cdaeb0a.jpg" alt="Imagen 1" />
+          <img src="2b218d7c-4e97-46c3-87e6-9109a1cd5f14.jpg" alt="Imagen 2" />
+          <img src="dd77084d-fb03-4cc5-b2e0-e711fa017339.jpg" alt="Imagen 3" />
+        </div>
+      </div>
+
+      <div class="seccion tarjeta desplegable">
+        <h2>📖 Acerca del Juego</h2>
+        <details>
+          <summary>🎯 Objetivo Educativo</summary>
+          <p>Fomentar el amor por la fauna. Enseñar sobre hábitats naturales. Incentivar el aprendizaje activo. Promover el respeto ambiental. Desarrollar la memoria y atención.</p>
+        </details>
+        <details>
+          <summary>👶 Edades Recomendadas</summary>
+          <p>Ideal para niños de 4 a 10 años. Actividades adaptadas por edad. Ilustraciones amigables y didácticas. Sonidos suaves y educativos.</p>
+        </details>
+        <details>
+          <summary>❓ ¿Por qué jugar?</summary>
+          <p>Aprender jugando es más divertido. Explorar nuevos mundos animales. Desarrollar empatía con la naturaleza. Pasar tiempo de calidad en familia.</p>
+        </details>
+      </div>
+
+      <div class="seccion tarjeta">
+        <h2>📲 Descarga la App</h2>
+        <p>Disponible para Android y iOS. Juega en cualquier momento y lugar, sin conexión. ¡Ideal para viajes o momentos de espera!</p>
+      </div>
+
+      <div class="redes">
+        <a href="https://www.facebook.com/share/1FR7yci73x/" target="_blank"><img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19759.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/ncl.x_x?igsh=NXU0dGg0cGM0N3Nm" target="_blank"><img src="https://www.iservice.at/wp-content/uploads/2020/12/Instagram-Flaticon.png" alt="Instagram" /></a>
+        <a href="https://www.aurorazoo.org.gt/" target="_blank"><img src="Captura de pantalla 2025-07-25 211725.png" alt="YouTube" /></a>
+      </div>
+    </section>
+
+    <section class="pantalla" id="opiniones">
+      <h2>🗣 Opiniones de los usuarios</h2>
+      <form class="formulario-opiniones tarjeta">
+        <label for="nombre">Nombre del niño:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="reseña">¿Qué te pareció el juego?</label>
+        <textarea id="reseña" name="reseña" rows="4" required></textarea>
+
+        <label>Estrellas:</label>
+        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+
+        <label for="mejoras">¿Qué mejorarías?</label>
+        <input type="text" id="mejoras" name="mejoras" />
+
+        <input type="submit" value="Enviar opinión" />
+      </form>
+    </section>
+
+    <section class="pantalla" id="sindromex">
+      <h2>🧬 ¿Qué es el Síndrome X?</h2>
+      <div class="tarjeta">
+        <p>El “Síndrome X” es una condición genética poco común que puede afectar el desarrollo de los niños. Este videojuego ha sido diseñado con apoyo de educadores y especialistas para crear un entorno seguro, respetuoso e inclusivo para todos los pequeños.</p>
+        <p>Promovemos la empatía y la comprensión desde edades tempranas, integrando personajes y experiencias pensadas para incluir a todos los niños, sin importar sus capacidades.</p>
+      <img src="https://tse1.explicit.bing.net/th/id/OIP.EVIlKqVW2i2P1B8XwqcxRQHaHa?r=0&cb=thvnext&w=1024&h=1024&rs=1&pid=ImgDetMain&o=7&rm=3" alt="sindrome">
+    <h2> Características comunes en las personas con Síndrome X</h2>
+    <ul>
+        <li>Retraso en el desarrollo del habla y del lenguaje</li>
+<li>Discapacidad intelectual leve a moderada</li>
+<li>Ansiedad social o problemas para interactuar</li>
+<li>Hiperactividad y déficit de atención</li>
+<li>Conductas repetitivas (como aletear las manos o evitar el contacto visual)</li>
+<li>Sensibilidad sensorial (luces brillantes, ruidos fuertes, etc.)</li>
+<li>En algunos casos, rasgos físicos como cara alargada, orejas grandes o pies planos</li>
+    </ul>
+    
+    
+      <p>El síndrome X frágil (también conocido como Síndrome Martin-Bell) es un trastorno genético hereditario que causa discapacidad intelectual, problemas de comportamiento y desarrollo, y a veces características físicas específicas. Es causado por una mutación en el gen FMR1 del cromosoma X, y es más común en los varones, aunque también afecta a mujeres en menor medida.</p>
+    </div>
+    </section>
+    <section class="pantalla" id="soporte">
+  <div class="tarjeta">
+    <h2>🛠 Soporte y Comunidad</h2>
+    <p>¿Tienes dudas, necesitas ayuda o quieres recibir novedades?</p>
+    <p>Únete a nuestro grupo de difusión en WhatsApp y mantente en contacto con el equipo de Ruge y Aprende 🦁🎉</p>
+    <a class="boton" href="https://chat.whatsapp.com/GEwjgpzrtAN1tr2gnuU8XK" target="_blank">Unirme al grupo de WhatsApp</a>
+  </div>
+</section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ruge y Aprende | Hecho con alegría junto al Zoológico La Aurora 🐾</p>
+  </footer>
+
+  <script>
+    function mostrarPantalla(id) {
+      document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('visible'));
+      document.getElementById(id).classList.add('visible');
+    }
+    
+    // Animación de corazones
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'corazon';
+      heart.textContent = '💖';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = '-' + Math.random() * 200 + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 6) + 's';
+      heart.style.fontSize = (1 + Math.random() * 2) + 'em';
+      document.getElementById('pantallaBienvenida').appendChild(heart);
+    }
+
+    function entrarSitio() {
+      document.getElementById('pantallaBienvenida').style.display = 'none';
+      document.getElementById('contenidoPrincipal').style.display = 'block';
+    }
+
+    function mostrarPantalla(id) {
+      document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('visible'));
+      document.getElementById(id).classList.add('visible');
+    }
+  
+  </script>
+</body>
+</html>
