@@ -12,62 +12,60 @@
 
   <style>
     /* Estilos de la pantalla de bienvenida */
-    .pantalla-inicio {
-      height: 100vh;
-      background: linear-gradient(135deg, #FFCC00, #4DD0E1);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-      z-index: 9999;
-    }
+   .pantalla-inicio {
+  height: 100vh;
+  background: linear-gradient(135deg, #F8F3EB, #0B6A75);
+  color: #0B6A75;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
 
+.pantalla-inicio h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.boton {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #0B6A75;
+  color: #F8F3EB;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.boton:hover {
+  background-color: #F8F3EB;
+  color: #0B6A75;
+  border: 1px solid #0B6A75;
+}
     .pantalla-inicio h1 {
       font-size: 4em;
       margin-bottom: 30px;
     }
 
-    .boton {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      background-color: #00BCD4;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-    }
-
-    .boton:hover {
-      background-color: #0097A7;
-    }
-
-    .corazon {
-      position: absolute;
-      animation: caida linear infinite;
-      color: #FF7043;
-      font-size: 1.2em;
-      pointer-events: none;
-    }
-
-    @keyframes caida {
-      0% { transform: translateY(-100%); opacity: 1; }
-      100% { transform: translateY(110vh); opacity: 0; }
-    }
+    
+    
   </style>
 
 </head>
 <body>
   <!-- Pantalla de bienvenida -->
   <div class="pantalla-inicio" id="pantallaBienvenida">
-    <h1>¡Bienvenidos a Ruge y Aprende! 🦁🐘</h1>
+    <h1>¡Bienvenidos a Ruge y Aprende! </h1>
     <button class="boton" onclick="entrarSitio()">Entrar</button>
   </div>
 </head>
@@ -144,8 +142,8 @@
       </div>
 
       <div class="redes">
-        <a href="https://www.facebook.com/share/1FR7yci73x/" target="_blank"><img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19759.png" alt="Facebook" /></a>
-        <a href="https://www.instagram.com/ncl.x_x?igsh=NXU0dGg0cGM0N3Nm" target="_blank"><img src="https://www.iservice.at/wp-content/uploads/2020/12/Instagram-Flaticon.png" alt="Instagram" /></a>
+        <a href="https://www.facebook.com/share/1BFrdqavxQ/" target="_blank"><img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19759.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/rugeyaprende/profilecard/?igsh=enN6cTBuOW56eDQ2" target="_blank"><img src="https://www.iservice.at/wp-content/uploads/2020/12/Instagram-Flaticon.png" alt="Instagram" /></a>
         <a href="https://www.aurorazoo.org.gt/" target="_blank"><img src="Captura de pantalla 2025-07-25 211725.png" alt="YouTube" /></a>
       </div>
     </section>
@@ -160,13 +158,28 @@
         <textarea id="reseña" name="reseña" rows="4" required></textarea>
 
         <label>Estrellas:</label>
-        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+      <label for="estrellas">Estrellas:</label>
+<div class="estrellas" id="estrellasInput">
+  <span data-value="1">★</span>
+  <span data-value="2">★</span>
+  <span data-value="3">★</span>
+  <span data-value="4">★</span>
+  <span data-value="5">★</span>
+</div>
+<input type="hidden" id="estrellas" name="estrellas" value="0" required>
+
+
 
         <label for="mejoras">¿Qué mejorarías?</label>
         <input type="text" id="mejoras" name="mejoras" />
 
         <input type="submit" value="Enviar opinión" />
       </form>
+      <div class="tarjeta historial-opiniones">
+  <h3>📝 Opiniones anteriores</h3>
+  <div id="listaOpiniones"></div>
+</div>
+
     </section>
 
     <section class="pantalla" id="sindromex">
@@ -202,37 +215,108 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Ruge y Aprende | Hecho con alegría junto al Zoológico La Aurora 🐾</p>
+    <p>&copy; Rugeyaprende@gmail.com | Hecho con alegría junto al Zoológico La Aurora 🐾</p>
   </footer>
 
-  <script>
-    function mostrarPantalla(id) {
-      document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('visible'));
-      document.getElementById(id).classList.add('visible');
+ <script>
+  function mostrarPantalla(id) {
+    document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('visible'));
+    document.getElementById(id).classList.add('visible');
+    if (id === "opiniones") {
+      mostrarOpiniones();
     }
-    
-    // Animación de corazones
-    for (let i = 0; i < 40; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'corazon';
-      heart.textContent = '💖';
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.top = '-' + Math.random() * 200 + 'px';
-      heart.style.animationDuration = (4 + Math.random() * 6) + 's';
-      heart.style.fontSize = (1 + Math.random() * 2) + 'em';
-      document.getElementById('pantallaBienvenida').appendChild(heart);
+  }
+
+  function entrarSitio() {
+    document.getElementById('pantallaBienvenida').style.display = 'none';
+    document.getElementById('contenidoPrincipal').style.display = 'block';
+  }
+
+  // Carrusel automático horizontal para la galería
+  const galeria = document.querySelector('.galeria');
+  let scrollAmount = 0;
+
+  setInterval(() => {
+    if (galeria) {
+      scrollAmount += 1;
+      galeria.scrollLeft = scrollAmount;
+      if (scrollAmount >= galeria.scrollWidth - galeria.clientWidth) {
+        scrollAmount = 0;
+      }
+    }
+  }, 30);
+
+  // ⭐ Estrellas interactivas
+  const estrellasInput = document.getElementById('estrellasInput');
+  const estrellasHidden = document.getElementById('estrellas');
+
+  if (estrellasInput) {
+    estrellasInput.querySelectorAll('span').forEach(estrella => {
+      estrella.addEventListener('click', () => {
+        const valor = parseInt(estrella.getAttribute('data-value'));
+        estrellasHidden.value = valor;
+
+        estrellasInput.querySelectorAll('span').forEach(e => {
+          e.classList.toggle('seleccionada', parseInt(e.getAttribute('data-value')) <= valor);
+        });
+      });
+    });
+  }
+
+  // Guardar opinión
+  document.querySelector('.formulario-opiniones').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const resena = document.getElementById('reseña').value;
+    const mejoras = document.getElementById('mejoras').value;
+    const estrellas = parseInt(document.getElementById('estrellas').value) || 0;
+
+    const nuevaOpinion = {
+      nombre: nombre,
+      resena: resena,
+      mejoras: mejoras,
+      fecha: new Date().toLocaleString(),
+      estrellas: estrellas
+    };
+
+    let opiniones = JSON.parse(localStorage.getItem('opiniones')) || [];
+    opiniones.push(nuevaOpinion);
+    localStorage.setItem('opiniones', JSON.stringify(opiniones));
+
+    this.reset();
+    estrellasInput.querySelectorAll('span').forEach(e => e.classList.remove('seleccionada'));
+    mostrarOpiniones();
+  });
+
+  // Mostrar historial
+  function mostrarOpiniones() {
+    const contenedor = document.getElementById('listaOpiniones');
+    contenedor.innerHTML = "";
+
+    let opiniones = JSON.parse(localStorage.getItem('opiniones')) || [];
+
+    if (opiniones.length === 0) {
+      contenedor.innerHTML = "<p>No hay opiniones aún. ¡Sé el primero en opinar!</p>";
+      return;
     }
 
-    function entrarSitio() {
-      document.getElementById('pantallaBienvenida').style.display = 'none';
-      document.getElementById('contenidoPrincipal').style.display = 'block';
-    }
+    opiniones.reverse().forEach(op => {
+      const div = document.createElement('div');
+      div.classList.add('opinion-item');
+      div.innerHTML = `
+        <h4>${op.nombre} <span style="font-weight:normal; font-size:0.8em;">(${op.fecha})</span></h4>
+        <p><strong>Opinión:</strong> ${op.resena}</p>
+        ${op.mejoras ? `<p><strong>Mejoras:</strong> ${op.mejoras}</p>` : ""}
+        <p><strong>Estrellas:</strong> ${"★".repeat(op.estrellas)}${"☆".repeat(5 - op.estrellas)}</p>
+      `;
+      contenedor.appendChild(div);
+    });
+  }
 
-    function mostrarPantalla(id) {
-      document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('visible'));
-      document.getElementById(id).classList.add('visible');
-    }
-  
-  </script>
+  // Mostrar opiniones al cargar
+  window.addEventListener('load', mostrarOpiniones);
+</script>
+
 </body>
 </html>

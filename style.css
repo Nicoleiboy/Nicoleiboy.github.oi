@@ -1,8 +1,8 @@
 body {
-  margin: 0;
+  background-color: #F8F3EB;
+  color: #0B6A75;
   font-family: 'Poppins', Arial, sans-serif;
-  background: white;
-  color: #333;
+  margin: 0;
 }
 
 
@@ -10,8 +10,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(to right, #66ccff, #ffdd55);
-  color: #fff;
+   background: linear-gradient(to right, #F8F3EB, #0B6A75);
+  color: #0B6A75;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -62,18 +62,6 @@ main {
   transition: transform 0.2s ease;
 }
 
-.redes {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.redes img {
-  width: 40px;
-  filter: grayscale(100%);
-  transition: 0.3s;
-}
-
 .redes img:hover {
   filter: grayscale(0%);
 }
@@ -92,12 +80,15 @@ main {
 
 .galeria img:hover {
   transform: scale(1.1);
+   transform: scale(1.1);
+  box-shadow: 0 0 10px #0B6A75;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background: #eee;
+   background-color: #F8F3EB;
+  color: #0B6A75;
   margin-top: 40px;
 }
 
@@ -108,9 +99,10 @@ footer {
 
 /* 🎨 NUEVO ESTILO CUTE para tarjetas/secciones */
 .tarjeta, .seccion {
-  background: #fff;
+   background: #fff;
+  border: 2px solid #0B6A75;
+  color: #0B6A75;
   border-radius: 20px;
-  border: 2px solid #4DD0E1;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 20px;
   margin-bottom: 20px;
@@ -123,22 +115,22 @@ footer {
 
 .tarjeta h2,
 .seccion h2 {
-  color: #0288D1;
+  color: #0B6A75;
 }
 
 /* 🌈 Estilo cute para <details> desplegables */
 .desplegable details {
-  border: 2px solid #4DD0E1;
+  border: 2px solid #0B6A75;
+  background-color: #F8F3EB;
   border-radius: 12px;
   margin-bottom: 15px;
-  background-color: #f9f9f9;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .desplegable summary {
-  background-color: #4DD0E1;
-  color: white;
+  background-color: #0B6A75;
+  color: #fff;
   padding: 15px;
   font-weight: bold;
   cursor: pointer;
@@ -166,3 +158,74 @@ footer {
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+* {
+  font-style: normal !important;
+}
+
+.galeria {
+  scroll-behavior: smooth;
+}
+
+.boton {
+  background-color: #0B6A75;
+  color: #fff;
+}
+
+.boton:hover {
+  background-color: #F8F3EB;
+  color: #0B6A75;
+  border: 1px solid #0B6A75;
+}
+
+.redes img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8) sepia(0.2) hue-rotate(160deg);
+  transition: 0.3s;
+}
+
+.redes img:hover {
+  filter: none;
+}
+
+.historial-opiniones {
+  background-color: #F8F3EB;
+  border: 2px solid #0B6A75;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.opinion-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.opinion-item:last-child {
+  border-bottom: none;
+}
+
+.opinion-item h4 {
+  margin: 0 0 5px;
+  font-weight: 600;
+  color: #0B6A75;
+}
+
+.opinion-item p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.estrellas span {
+  font-size: 2em;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.estrellas span.seleccionada {
+  color: gold;
+}
+
